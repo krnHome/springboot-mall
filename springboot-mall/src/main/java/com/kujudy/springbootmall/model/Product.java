@@ -15,6 +15,7 @@ public class Product {
     private Date createdDate;
     private Date lastModifiedDate;
 
+
     public Integer getProductId() {
         return productId;
     }
@@ -86,4 +87,5 @@ public class Product {
     public void setLastModifiedDate(Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
+
 }
