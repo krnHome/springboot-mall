@@ -3,6 +3,7 @@ package com.kujudy.springbootmall.dto;
 import com.kujudy.springbootmall.constant.ProductCategory;
 
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 
 public class ProductRequest {
@@ -22,7 +23,6 @@ public class ProductRequest {
     @NotNull
     private Integer stock;
     private String description;
-
 
 
     public String getProductName() {
