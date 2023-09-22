@@ -2,6 +2,7 @@ package com.kujudy.springbootmall.controller;
 
 import com.kujudy.springbootmall.constant.ProductCategory;
 import com.kujudy.springbootmall.dao.ProductDao;
+import com.kujudy.springbootmall.dto.ProductQueryParams;
 import com.kujudy.springbootmall.dto.ProductRequest;
 import com.kujudy.springbootmall.model.Product;
 import com.kujudy.springbootmall.service.ProductService;
@@ -25,7 +26,10 @@ public class ProductController {
             @RequestParam(required = false) ProductCategory category,
             @RequestParam(required = false) String search
             ){
-       List<Product> productList =  productService.getProducts(category,search);
+        ProductQueryParams productQueryParams = new ProductQueryParams();
+        productQueryParams.setCategory(category);
+        productQueryParams.setSearch(search);
+       List<Product> productList =  productService.getProducts(productQueryParams);
 
        return ResponseEntity.status(HttpStatus.OK).body(productList);
     }
